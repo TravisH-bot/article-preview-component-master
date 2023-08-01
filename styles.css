@@ -31,7 +31,6 @@ body {
 .main-container {
   width: 62rem;
   height: 24rem;
-  background-color: lightblue;
   display: flex;
   border-radius: 1rem;
 }
@@ -102,10 +101,6 @@ body {
   height: 3rem;
   background-color: var(--light-grayish-blue);
   border-radius: 50%;
-  /* background-image: url("./images/icon-share.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1.6rem; */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -118,8 +113,134 @@ body {
 }
 
 .share:hover {
-  background-color: var(--very-dark-grayish-blue);
+  background-color: var(--desaturated-dark-blue);
 }
+
 .share:hover svg {
   color: var(--white);
+}
+
+#hidden {
+  display: none;
+}
+
+.share-popup {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 19rem;
+  height: 4rem;
+  background-color: var(--very-dark-grayish-blue);
+  border-radius: 1rem;
+  margin: 0 0 12rem 0;
+  opacity: 0.95;
+}
+
+.share-popup::after {
+  content: "";
+  border: 1.2rem solid transparent;
+  position: absolute;
+}
+
+.bottom.share-popup::after {
+  border-top-color: var(--very-dark-grayish-blue);
+  border-bottom: 0;
+  bottom: -1.2rem;
+  left: 50%;
+  margin-left: -1.2rem;
+}
+
+.share-popup h3 {
+  color: var(--light-grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  font-size: var(--font-size);
+}
+
+.share-popup img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.attribution {
+  margin-top: 3rem;
+}
+
+/* ================================= Media Queries ============================== */
+
+@media screen and (max-width: 400px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23.438rem;
+    height: 36rem;
+  }
+
+  .img-card {
+    width: 21rem;
+    height: 16rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .info-card {
+    width: 21rem;
+    height: 25rem;
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .info-card h1 {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .info-card p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  #michelle {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
+  }
+
+  #name {
+    font-size: 1rem;
+  }
+
+  #date {
+    font-size: 1rem;
+  }
+
+  .share {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .share svg {
+    scale: 1;
+  }
+
+  .share-popup {
+    border-radius: 0 0 1rem 1rem;
+    margin: 3rem 16.5rem 0 0;
+    width: 21rem;
+    height: 5rem;
+    opacity: 1;
+  }
+
+  .share-popup::after {
+    content: "";
+    border: none;
+    position: absolute;
+  }
+
+  .attribution {
+    margin-top: 3rem;
+    width: 21rem;
+    font-size: 0.8rem;
+  }
 }
